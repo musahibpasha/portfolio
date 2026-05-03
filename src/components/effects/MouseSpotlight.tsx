@@ -16,10 +16,26 @@ export function MouseSpotlight({ children, className = '' }: Props) {
   const ref = useRef<HTMLDivElement>(null)
   const mx = useMotionValue(400)
   const my = useMotionValue(140)
-  const sx = useSpring(mx, { stiffness: 260, damping: 32 })
-  const sy = useSpring(my, { stiffness: 260, damping: 32 })
+  const sx = useSpring(mx, { stiffness: 350, damping: 12 })
+  const sy = useSpring(my, { stiffness: 350, damping: 12 })
 
-  const backgroundImage = useMotionTemplate`radial-gradient(580px circle at ${sx}px ${sy}px, rgba(88,166,255,0.11), transparent 52%)`
+  // Trail positions - lag behind the main cursor
+  const sx1 = useSpring(mx, { stiffness: 300, damping: 18 })
+  const sy1 = useSpring(my, { stiffness: 300, damping: 18 })
+
+  const sx2 = useSpring(mx, { stiffness: 250, damping: 25 })
+  const sy2 = useSpring(my, { stiffness: 250, damping: 25 })
+
+  const sx3 = useSpring(mx, { stiffness: 200, damping: 32 })
+  const sy3 = useSpring(my, { stiffness: 200, damping: 32 })
+
+  // Main bright glow + trail glows combined
+  const backgroundImage = useMotionTemplate`
+    radial-gradient(400px circle at ${sx3}px ${sy3}px, rgba(88,166,255,0.05), transparent 60%),
+    radial-gradient(500px circle at ${sx2}px ${sy2}px, rgba(88,166,255,0.1), transparent 58%),
+    radial-gradient(600px circle at ${sx1}px ${sy1}px, rgba(88,166,255,0.15), transparent 55%),
+    radial-gradient(750px circle at ${sx}px ${sy}px, rgba(88,166,255,0.25), transparent 52%)
+  `
 
   useEffect(() => {
     const el = ref.current

@@ -13,7 +13,7 @@ type ExpItem = {
   points: string[]
 }
 
-/** Periods aligned with public LinkedIn (ThoughtBot ongoing; Peenya Nov–Dec 2024) */
+/** Periods aligned with public LinkedIn (ThoughtBot ongoing) */
 const items: ExpItem[] = [
   {
     icon: GraduationCap,
@@ -34,16 +34,6 @@ const items: ExpItem[] = [
     points: [
       'Building and maintaining UI with HTML, CSS, JavaScript, and React in a professional sprint rhythm.',
       'Collaborating inside a structured engineering cadence alongside placement-oriented delivery goals.',
-    ],
-  },
-  {
-    icon: Building2,
-    title: 'Data Manager — Peenya Industries Association',
-    period: 'Nov 2024 – Dec 2024',
-    subtitle: 'Research · nonprofit / industry association · Bengaluru (per LinkedIn)',
-    points: [
-      'Month-long stewardship of research-aligned data workflows and coordination within a civic-industry NGO setting.',
-      'Experience translating fragmented operational inputs into consistent records for stakeholder reporting.',
     ],
   },
   {
@@ -85,7 +75,7 @@ export function Experience() {
                 >
                   LinkedIn profile
                 </a>
-                {' — '}ThoughtBot internship, brief data-manager engagement at Peenya Industries Association, MCA @ St Claret College, plus analytics-heavy certifications.
+                {' — '}ThoughtBot internship, MCA @ St Claret College, plus analytics-heavy certifications.
               </>
             }
           />

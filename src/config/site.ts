@@ -154,6 +154,17 @@ export const portfolioProjects: readonly PortfolioProject[] = [
     initials: 'PF',
   },
   {
+    title: 'Health Care SQL Database',
+    description:
+      'Comprehensive SQL healthcare analytics dashboard showcasing data modeling, complex queries, and interactive visualizations. Built with SQL database design patterns and responsive charts for healthcare metrics analysis and reporting.',
+    tech: ['SQL', 'Database Design', 'Charts', 'Analytics'],
+    accent: 'from-red-500/40 to-pink-600/20',
+    github: 'https://github.com/musahibpasha/Health-Care-SQL-',
+    live: 'https://v0-resume-database-charts.vercel.app/',
+    initials: 'HC',
+    liveLabel: 'View Demo',
+  },
+  {
     title: 'Deloitte Australia — Data Analytics (Forage)',
     description:
       'Job simulation completed via Forage (also posted on LinkedIn): structured analytics workflow, stakeholder-ready outputs, and practice aligned with professional services-style data delivery.',

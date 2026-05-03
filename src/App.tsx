@@ -7,6 +7,7 @@ import { Footer } from './components/layout/Footer'
 import { LoadingScreen } from './components/layout/LoadingScreen'
 import { Navbar } from './components/layout/Navbar'
 import { ScrollProgress } from './components/layout/ScrollProgress'
+import { MouseSpotlight } from './components/effects/MouseSpotlight'
 import { About } from './components/sections/About'
 import { Certifications } from './components/sections/Certifications'
 import { Contact } from './components/sections/Contact'
@@ -33,28 +34,30 @@ function App() {
       <BackgroundBlobs />
       <div className="relative min-h-svh text-zinc-200">
         <Navbar activeSection={activeSection} />
-        <motion.div
-          className="relative mx-auto min-h-svh max-w-6xl px-4 pb-16 sm:px-6 lg:px-8"
-          animate={{
-            opacity: loading ? 0 : 1,
-            y: loading ? 12 : 0,
-            filter: loading ? 'blur(10px)' : 'blur(0px)',
-          }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          style={{ pointerEvents: loading ? 'none' : 'auto' }}
-        >
-          <main>
-            <Hero />
-            <About />
-            <Skills />
-            <Projects />
-            <Experience />
-            <Certifications />
-            <GitHubStats />
-            <Contact />
-            <Footer />
-          </main>
-        </motion.div>
+        <MouseSpotlight className="relative min-h-svh">
+          <motion.div
+            className="relative mx-auto min-h-svh max-w-6xl px-4 pb-16 sm:px-6 lg:px-8"
+            animate={{
+              opacity: loading ? 0 : 1,
+              y: loading ? 12 : 0,
+              filter: loading ? 'blur(10px)' : 'blur(0px)',
+            }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            style={{ pointerEvents: loading ? 'none' : 'auto' }}
+          >
+            <main>
+              <Hero />
+              <About />
+              <Skills />
+              <Projects />
+              <Experience />
+              <Certifications />
+              <GitHubStats />
+              <Contact />
+              <Footer />
+            </main>
+          </motion.div>
+        </MouseSpotlight>
       </div>
     </>
   )
