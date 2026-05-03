@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Award, Briefcase, Building2, GraduationCap, Target } from 'lucide-react'
+import { Award, Briefcase, GraduationCap, Target } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { site } from '../../config/site'
 import { SectionHeading } from '../ui/SectionHeading'
@@ -28,7 +28,7 @@ const items: ExpItem[] = [
   {
     icon: Briefcase,
     title: 'Junior Web Developer — ThoughtBot',
-    period: 'Feb 2025 – Present',
+    period: 'Feb 2025 – Mar 2025 internship',
     subtitle:
       'LinkedIn · Bengaluru · Engineering & Technical · staffing & recruiting / software consulting context',
     points: [
