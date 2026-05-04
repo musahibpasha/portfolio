@@ -62,8 +62,8 @@ export function About() {
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-emerald-500/20 to-sky-500/20 blur-3xl" />
             <div className="glass-card relative h-full w-full overflow-hidden rounded-full border border-white/10 bg-gradient-to-br from-emerald-500/10 to-sky-500/10">
               <img 
-                src="/src/assets/profile.webp"
-                alt="Darshan Gowdags"
+                src="c:\users\pc\Downloads\IMG_20241028_131918_026.webp"
+                alt="Profile picture of musahib"
                 className="h-full w-full object-cover"
               />
             </div>
