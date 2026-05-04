@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Award } from 'lucide-react'
+import { ArrowUpRight, Award } from 'lucide-react'
 import { certificationsList } from '../../config/site'
 import { SectionHeading } from '../ui/SectionHeading'
 import { SectionReveal } from '../ui/SectionReveal'
