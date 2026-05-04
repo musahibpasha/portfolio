@@ -3,7 +3,6 @@ import { ArrowUpRight } from 'lucide-react'
 import { IconGithub } from '../icons/Social'
 import {
   portfolioProjects,
-  site,
   type PortfolioProject,
 } from '../../config/site'
 import { SectionHeading } from '../ui/SectionHeading'

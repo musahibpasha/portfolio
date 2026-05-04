@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { Award, Briefcase, GraduationCap, Target } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
-import { site } from '../../config/site'
 import { SectionHeading } from '../ui/SectionHeading'
 import { SectionReveal } from '../ui/SectionReveal'
 

@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion'
-import { ArrowUpRight, Award } from 'lucide-react'
-import { certificationsList, site } from '../../config/site'
+import { Award } from 'lucide-react'
+import { certificationsList } from '../../config/site'
 import { SectionHeading } from '../ui/SectionHeading'
 import { SectionReveal } from '../ui/SectionReveal'
 
 export function Certifications() {
-  const linkedInCertsUrl = `${site.linkedin.replace(/\/?$/, '')}/details/certifications/`
 
   return (
     <section id="certifications" className="scroll-mt-24 pb-24 pt-4">
