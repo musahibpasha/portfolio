@@ -124,24 +124,15 @@ export type PortfolioProject = {
 /** Projects section mirrors what you showcase on LinkedIn + this site + Forage credential */
 export const portfolioProjects: readonly PortfolioProject[] = [
   {
-    title: 'NEWSAPP',
+    title: 'Health Care SQL Database',
     description:
-      'Real-time data fetching so readers get the newest stories as they publish. Breaking alerts and trending feeds are surfaced first to keep users informed on global and local events. Built with React functional components, modular hooks, and predictable state/side-effect handling.',
-    tech: ['React', 'Hooks', 'APIs', 'Real-time UX'],
-    accent: 'from-sky-500/40 to-blue-600/20',
-    github: '#',
-    live: '#',
-    initials: 'NW',
-  },
-  {
-    title: 'Text Analyzer',
-    description:
-      'React SPA focused on clarity and performance: memoization and conditional rendering to avoid unnecessary re-renders while users paste and analyze text—component boundaries stay small and testable.',
-    tech: ['React', 'Performance', 'Memoization'],
-    accent: 'from-emerald-500/40 to-teal-600/20',
-    github: '#',
-    live: '#',
-    initials: 'TA',
+      'Comprehensive SQL healthcare analytics dashboard showcasing data modeling, complex queries, and interactive visualizations. Built with SQL database design patterns and responsive charts for healthcare metrics analysis and reporting.',
+    tech: ['SQL', 'Database Design', 'Charts', 'Analytics'],
+    accent: 'from-red-500/40 to-pink-600/20',
+    github: 'https://github.com/musahibpasha/Health-Care-SQL-',
+    live: 'https://v0-resume-database-charts.vercel.app/',
+    initials: 'HC',
+    liveLabel: 'View Demo',
   },
   {
     title: 'Portfolio Website',
@@ -154,28 +145,27 @@ export const portfolioProjects: readonly PortfolioProject[] = [
     initials: 'PF',
   },
   {
-    title: 'Health Care SQL Database',
+    title: 'NEWSAPP',
     description:
-      'Comprehensive SQL healthcare analytics dashboard showcasing data modeling, complex queries, and interactive visualizations. Built with SQL database design patterns and responsive charts for healthcare metrics analysis and reporting.',
-    tech: ['SQL', 'Database Design', 'Charts', 'Analytics'],
-    accent: 'from-red-500/40 to-pink-600/20',
-    github: 'https://github.com/musahibpasha/Health-Care-SQL-',
-    live: 'https://v0-resume-database-charts.vercel.app/',
-    initials: 'HC',
-    liveLabel: 'View Demo',
-  },
-  {
-    title: 'Deloitte Australia — Data Analytics (Forage)',
-    description:
-      'Job simulation completed via Forage (also posted on LinkedIn): structured analytics workflow, stakeholder-ready outputs, and practice aligned with professional services-style data delivery.',
-    tech: ['Data analytics', 'Forage', 'Structured analysis'],
-    accent: 'from-amber-500/35 to-rose-600/20',
+      'Real-time data fetching so readers get the newest stories as they publish. Breaking alerts and trending feeds are surfaced first to keep users informed on global and local events. Built with React functional components, modular hooks, and predictable state/side-effect handling.',
+    tech: ['React', 'Hooks', 'APIs', 'Real-time UX'],
+    accent: 'from-sky-500/40 to-blue-600/20',
     github: '#',
-    live: site.deloitteForageCertificateUrl,
-    initials: 'DA',
-    liveLabel: 'View credential',
-    showGithub: false,
+    live: '#',
+    initials: 'NW',
   },
+  // {
+  //   title: 'Deloitte Australia — Data Analytics (Forage)',
+  //   description:
+  //     'Job simulation completed via Forage (also posted on LinkedIn): structured analytics workflow, stakeholder-ready outputs, and practice aligned with professional services-style data delivery.',
+  //   tech: ['Data analytics', 'Forage', 'Structured analysis'],
+  //   accent: 'from-amber-500/35 to-rose-600/20',
+  //   github: '#',
+  //   live: site.deloitteForageCertificateUrl,
+  //   initials: 'DA',
+  //   liveLabel: 'View credential',
+  //   showGithub: false,
+  // },
 ] as const
 
 export type NavLink = { label: string; href: string; id: string }
@@ -187,6 +177,5 @@ export const navLinks: NavLink[] = [
   { label: 'Projects', href: '#projects', id: 'projects' },
   { label: 'Education', href: '#education', id: 'education' },
   { label: 'Certifications', href: '#certifications', id: 'certifications' },
-  { label: 'GitHub', href: '#github', id: 'github' },
   { label: 'Contact', href: '#contact', id: 'contact' },
 ]

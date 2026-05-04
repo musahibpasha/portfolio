@@ -12,7 +12,7 @@ import { About } from './components/sections/About'
 import { Certifications } from './components/sections/Certifications'
 import { Contact } from './components/sections/Contact'
 import { Experience } from './components/sections/Experience'
-import { GitHubStats } from './components/sections/GitHubStats'
+// import { GitHubStats } from './components/sections/GitHubStats'
 import { Hero } from './components/sections/Hero'
 import { Projects } from './components/sections/Projects'
 import { Skills } from './components/sections/Skills'
@@ -52,7 +52,7 @@ function App() {
               <Projects />
               <Experience />
               <Certifications />
-              <GitHubStats />
+              {/* <GitHubStats /> */}
               <Contact />
               <Footer />
             </main>
