@@ -130,7 +130,7 @@ export function Projects() {
           />
         </SectionReveal>
 
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid gap-8 lg:grid-cols-3">
           {portfolioProjects.map((p, i) => (
             <ProjectCard key={p.title} project={p} index={i} />
           ))}
