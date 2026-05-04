@@ -107,26 +107,8 @@ export function Projects() {
         <SectionReveal>
           <SectionHeading
             kicker="Projects"
-            title="Same story as LinkedIn—with room to wire repos"
-            description={
-              <>
-                <strong className="font-medium text-zinc-300">NEWSAPP</strong> and{' '}
-                <strong className="font-medium text-zinc-300">Text Analyzer</strong> copy is lifted from{' '}
-                <a
-                  href={site.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-emerald-400 underline-offset-2 hover:underline"
-                >
-                  your LinkedIn projects
-                </a>
-                . Add GitHub/live URLs next to each card in{' '}
-                <code className="rounded-md border border-white/10 bg-black/40 px-1.5 py-0.5 font-mono text-xs text-zinc-300">
-                  site.ts · portfolioProjects
-                </code>{' '}
-                when repos go public—the Deloitte row already opens your Forage PDF.
-              </>
-            }
+            title="What I’ve built"
+
           />
         </SectionReveal>
 

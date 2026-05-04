@@ -21,8 +21,7 @@ export function Contact() {
         <SectionReveal delay={0.02}>
           <SectionHeading
             kicker="Contact"
-            title="Let’s build something together"
-            description="Questions, internships, or collaboration ideas—I’ll get back within a few days."
+            title="Get in touch"
           />
         </SectionReveal>
 

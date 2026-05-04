@@ -12,7 +12,7 @@ type Props = {
 export function SectionHeading({ kicker, title, description, className = '' }: Props) {
   return (
     <motion.div
-      className={`mb-10 md:mb-14 ${className}`}
+      className={`mb-10 flex flex-col items-center justify-center text-center md:mb-14 ${className}`}
       initial={{ opacity: 0, y: 22 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-12% 0px' }}
@@ -21,9 +21,11 @@ export function SectionHeading({ kicker, title, description, className = '' }: P
       <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-emerald-400/90 md:text-xs">
         {kicker}
       </p>
-      <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-        {title}
-      </h2>
+      <div className="mt-3 inline-block rounded-full border border-white/15 bg-white/[0.05] px-6 py-3 backdrop-blur-md">
+        <h2 className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          {title}
+        </h2>
+      </div>
       {description ? (
         <div className="mt-4 max-w-2xl text-sm leading-relaxed text-zinc-400 md:text-[15px]">
           {description}

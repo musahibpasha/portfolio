@@ -64,20 +64,6 @@ export function Experience() {
           <SectionHeading
             kicker="Education & experience"
             title="Timeline"
-            description={
-              <>
-                Roles and certs mirror my{' '}
-                <a
-                  href={site.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-emerald-400 underline-offset-2 hover:underline"
-                >
-                  LinkedIn profile
-                </a>
-                {' — '}ThoughtBot internship, MCA @ St Claret College, plus analytics-heavy certifications.
-              </>
-            }
           />
         </SectionReveal>
 

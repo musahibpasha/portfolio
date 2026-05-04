@@ -14,29 +14,6 @@ export function Certifications() {
           <SectionHeading
             kicker="Credentials"
             title="Licenses & certifications"
-            description={
-              <>
-                Same credentials surfaced on{' '}
-                <a
-                  href={site.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-emerald-400 underline-offset-2 hover:underline"
-                >
-                  LinkedIn
-                </a>
-                , with{' '}
-                <a
-                  href={linkedInCertsUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-emerald-400 underline-offset-2 hover:underline"
-                >
-                  direct certifications tab
-                </a>
-                . Each card opens the issuer PDF, badge, course, or hub in a new tab.
-              </>
-            }
           />
         </SectionReveal>
 

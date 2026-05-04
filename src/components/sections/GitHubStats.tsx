@@ -21,7 +21,7 @@ export function GitHubStats() {
           <SectionHeading
             kicker="GitHub"
             title="Activity & stats"
-            description="Complements analytics & SQL coursework on LinkedIn with open-source commits—graphs refresh from GitHub’s public APIs."
+
           />
         </SectionReveal>
 

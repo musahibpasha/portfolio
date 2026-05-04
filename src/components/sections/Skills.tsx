@@ -112,21 +112,6 @@ export function Skills() {
           <SectionHeading
             kicker="Skills"
             title="Analytics, databases & interfaces"
-            description={
-              <>
-                Stack mirrored from{' '}
-                <a
-                  href={site.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-emerald-400 underline-offset-2 hover:underline"
-                >
-                  LinkedIn endorsements & coursework
-                </a>
-                : SQL-led thinking, MongoDB/AWS/Deloitte-style analytics drills, paired with ThoughtBot-era
-                HTML/CSS/JavaScript/React delivery.
-              </>
-            }
           />
         </SectionReveal>
 

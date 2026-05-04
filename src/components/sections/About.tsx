@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { BarChart3, Code2, Layout } from 'lucide-react'
 import { site } from '../../config/site'
+import { SectionHeading } from '../ui/SectionHeading'
 import { SectionReveal } from '../ui/SectionReveal'
 
 const pillars = [
@@ -36,22 +37,15 @@ const timeline = [
 export function About() {
   return (
     <section id="about" className="scroll-mt-24 pb-24 pt-8">
-      <SectionReveal>
-        <div className="mb-12 flex items-center justify-center">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="inline-block rounded-full border border-white/15 bg-white/[0.05] px-6 py-3 font-display text-xl font-semibold text-white backdrop-blur-md">
-              About Me
-            </h2>
-          </motion.div>
-        </div>
-      </SectionReveal>
+      <div className="mx-auto max-w-5xl">
+        <SectionReveal>
+          <SectionHeading
+            kicker="About"
+            title="About me"
+          />
+        </SectionReveal>
 
-      <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
         {/* Profile Image */}
         <SectionReveal delay={0.05}>
           <motion.div
@@ -130,31 +124,32 @@ export function About() {
             </motion.a>
           </SectionReveal>
         </div>
-      </div>
+        </div>
 
-      {/* Trajectory */}
-      <SectionReveal delay={0.14}>
-        <motion.div
-          className="glass-card mt-12 rounded-2xl p-8"
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-8%' }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <h3 className="font-display text-lg font-semibold text-white">Trajectory</h3>
-          <ul className="mt-6 space-y-5 border-l border-white/10 pl-6">
-            {timeline.map((t) => (
-              <li key={t.label} className="relative">
-                <span className="absolute -left-[calc(1.5rem+5px)] top-2 h-2.5 w-2.5 rounded-full bg-gradient-to-br from-emerald-400 to-sky-500 ring-4 ring-zinc-950" />
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400/90">
-                  {t.period}
-                </p>
-                <p className="mt-1 text-sm text-zinc-400">{t.label}</p>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-      </SectionReveal>
+        {/* Trajectory */}
+        <SectionReveal delay={0.14}>
+          <motion.div
+            className="glass-card mt-12 rounded-2xl p-8"
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-8%' }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <h3 className="font-display text-lg font-semibold text-white">Trajectory</h3>
+            <ul className="mt-6 space-y-5 border-l border-white/10 pl-6">
+              {timeline.map((t) => (
+                <li key={t.label} className="relative">
+                  <span className="absolute -left-[calc(1.5rem+5px)] top-2 h-2.5 w-2.5 rounded-full bg-gradient-to-br from-emerald-400 to-sky-500 ring-4 ring-zinc-950" />
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400/90">
+                    {t.period}
+                  </p>
+                  <p className="mt-1 text-sm text-zinc-400">{t.label}</p>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </SectionReveal>
+      </div>
     </section>
   )
 }
