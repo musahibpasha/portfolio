@@ -140,20 +140,20 @@ export const portfolioProjects: readonly PortfolioProject[] = [
       'This single-page portfolio: dark theme, glassmorphism, Framer Motion reveals, and sections aligned with LinkedIn (experience, skills, GitHub stats, contact).',
     tech: ['React', 'Tailwind CSS', 'Framer Motion'],
     accent: 'from-violet-500/40 to-purple-600/20',
-    github: site.github,
-    live: '#',
+    github: 'https://github.com/musahibpasha/portfolio',
+    live: 'https://portfolio-beige-ten-10.vercel.app/',
     initials: 'PF',
   },
-  {
-    title: 'NEWSAPP',
-    description:
-      'Real-time data fetching so readers get the newest stories as they publish. Breaking alerts and trending feeds are surfaced first to keep users informed on global and local events. Built with React functional components, modular hooks, and predictable state/side-effect handling.',
-    tech: ['React', 'Hooks', 'APIs', 'Real-time UX'],
-    accent: 'from-sky-500/40 to-blue-600/20',
-    github: '#',
-    live: '#',
-    initials: 'NW',
-  },
+  // {
+  //   title: 'NEWSAPP',
+  //   description:
+  //     'Real-time data fetching so readers get the newest stories as they publish. Breaking alerts and trending feeds are surfaced first to keep users informed on global and local events. Built with React functional components, modular hooks, and predictable state/side-effect handling.',
+  //   tech: ['React', 'Hooks', 'APIs', 'Real-time UX'],
+  //   accent: 'from-sky-500/40 to-blue-600/20',
+  //   github: '#',
+  //   live: '#',
+  //   initials: 'NW',
+  // },
   // {
   //   title: 'Deloitte Australia — Data Analytics (Forage)',
   //   description:
