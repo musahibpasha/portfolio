@@ -5,14 +5,42 @@ import { IconGithub, IconLinkedin } from '../icons/Social'
 import { site } from '../../config/site'
 import { SectionHeading } from '../ui/SectionHeading'
 import { SectionReveal } from '../ui/SectionReveal'
+import { supabase } from '../../lib/supabase'
 
 export function Contact() {
   const [sent, setSent] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setSent(true)
-    window.setTimeout(() => setSent(false), 4000)
+    setLoading(true)
+    setError(null)
+
+    const formData = new FormData(e.currentTarget)
+    const name = formData.get('name') as string
+    const email = formData.get('email') as string
+    const message = formData.get('message') as string
+
+    try {
+      const { error: supabaseError } = await supabase
+        .from('contact_submissions')
+        .insert([{ name, email, message }])
+
+      if (supabaseError) {
+        throw supabaseError
+      }
+
+      setSent(true)
+      e.currentTarget.reset()
+      window.setTimeout(() => setSent(false), 4000)
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : 'Failed to send message'
+      setError(errorMessage)
+      window.setTimeout(() => setError(null), 4000)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -123,20 +151,30 @@ export function Contact() {
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <motion.button
                   type="submit"
-                  className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20"
-                  whileHover={{ scale: 1.02, y: -1 }}
-                  whileTap={{ scale: 0.98 }}
+                  disabled={loading}
+                  className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
+                  whileHover={{ scale: loading ? 1 : 1.02, y: loading ? 0 : -1 }}
+                  whileTap={{ scale: loading ? 1 : 0.98 }}
                 >
-                  Send message
+                  {loading ? 'Sending...' : 'Send message'}
                   <Send className="h-4 w-4" />
                 </motion.button>
                 {sent && (
                   <motion.p
                     initial={{ opacity: 0, x: -6 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className="text-sm text-zinc-400"
+                    className="text-sm text-emerald-400"
                   >
-                    Thanks — demo form only. Connect to your API when ready.
+                    Message sent! Thanks for reaching out.
+                  </motion.p>
+                )}
+                {error && (
+                  <motion.p
+                    initial={{ opacity: 0, x: -6 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    className="text-sm text-red-400"
+                  >
+                    Error: {error}
                   </motion.p>
                 )}
               </div>
