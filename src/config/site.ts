@@ -35,7 +35,7 @@ export const site = {
     'On LinkedIn I describe curiosity across C & Python programming, web development, and design—so I can own both clarity of analysis and polish of presentation. Recent wins include Deloitte Australia’s Data Analytics job simulation on Forage, MongoDB Atlas & data modeling coursework, AWS Certified Machine Learning – Specialty, and hands-on internships that mix research-style data stewardship with production front-end routines.',
 
   email: 'musahibpasha4@gmail.com',
-  github: 'https://github.com/musahibpashaa',
+  github: 'https://github.com/musahibpasha/portfolio',
   githubUsername: 'MohammadMusahibPasha',
 
   linkedin:
