@@ -33,7 +33,20 @@ function ProjectCard({
         <div
           className={`relative aspect-[16/10] overflow-hidden bg-gradient-to-br ${project.accent} via-zinc-900/90 to-zinc-950`}
         >
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M0%200h60v60H0z%22%20fill%3D%22none%22/%3E%3Cpath%20stroke%3D%22rgba(255,255,255,0.06)%22%20stroke-width%3D%221%22%20d%3D%22M0%2060V0M60%200v60%22/%3E%3C/svg%3E')] opacity-80" />
+          {project.imgSrc ? (
+            <>
+              <img
+                src={project.imgSrc}
+                alt={project.title}
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-zinc-950/80" />
+            </>
+          ) : (
+            <>
+              <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M0%200h60v60H0z%22%20fill%3D%22none%22/%3E%3Cpath%20stroke%3D%22rgba(255,255,255,0.06)%22%20stroke-width%3D%221%22%20d%3D%22M0%2060V0M60%200v60%22/%3E%3C/svg%3E')] opacity-80" />
+            </>
+          )}
           <div className="absolute inset-0 flex flex-col items-center justify-center px-8 text-center">
             <span className="font-display text-3xl font-bold tracking-[0.2em] text-white/35">
               {project.initials}

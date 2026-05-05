@@ -119,6 +119,8 @@ export type PortfolioProject = {
   liveLabel?: string
   /** If false, hide GitHub button (simulations / non-repo work) */
   showGithub?: boolean
+  /** Optional project preview image path */
+  imgSrc?: string
 }
 
 /** Projects section mirrors what you showcase on LinkedIn + this site + Forage credential */
@@ -132,6 +134,7 @@ export const portfolioProjects: readonly PortfolioProject[] = [
     github: 'https://github.com/musahibpasha/Health-Care-SQL-',
     live: 'https://v0-resume-database-charts.vercel.app/',
     initials: 'HC',
+    imgSrc: '/image.png',
     liveLabel: 'View Demo',
   },
   {
@@ -142,7 +145,8 @@ export const portfolioProjects: readonly PortfolioProject[] = [
     accent: 'from-violet-500/40 to-purple-600/20',
     github: 'https://github.com/musahibpasha/portfolio',
     live: 'https://portfolio-beige-ten-10.vercel.app/',
-    initials: 'PF',
+    initials: 'PW',
+      imgSrc: '/portfolio-preview.png',
   },
   // {
   //   title: 'NEWSAPP',

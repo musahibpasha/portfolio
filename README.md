@@ -14,6 +14,10 @@ Certifications include Deloitte Analytics (Forage), AWS ML Specialty, and MongoD
 
 **Live Site:** [portfolio-beige-ten-10.vercel.app](https://portfolio-beige-ten-10.vercel.app/)
 
+## 🎨 Live Demo
+
+![Portfolio Dashboard Preview](./public/image.png)
+
 ## 🛠️ Tech Stack
 
 - **React 19** + TypeScript — Component-based UI
