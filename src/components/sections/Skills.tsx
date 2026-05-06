@@ -26,16 +26,9 @@ type Skill = {
 /** LinkedIn + stated goals: data/SQL/analytics paired with proven web delivery */
 const skills: Skill[] = [
   { name: 'SQL', icon: Database, level: 90 },
-  { name: 'Data analytics', icon: ChartColumnIncreasing, level: 86 },
   { name: 'Python', icon: Binary, level: 84 },
-  { name: 'MongoDB', icon: Cylinder, level: 82 },
   { name: 'React', icon: Atom, level: 88 },
-  { name: 'JavaScript', icon: Braces, level: 86 },
-  { name: 'HTML', icon: CodeXml, level: 90 },
-  { name: 'CSS', icon: Palette, level: 87 },
-  { name: 'Tailwind CSS', icon: Wind, level: 88 },
-  { name: 'GitHub', icon: FolderGit, level: 86 },
-  { name: 'Problem solving', icon: Brain, level: 88 },
+  { name: 'JavaScript', icon: Braces, level: 86 }
 ]
 
 function AnimatedBar({ value }: { value: number }) {
