@@ -2,15 +2,8 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import {
   Atom,
   Binary,
-  Brain,
   Braces,
-  ChartColumnIncreasing,
-  CodeXml,
-  Cylinder,
   Database,
-  FolderGit,
-  Palette,
-  Wind,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { useEffect, useRef } from 'react'
