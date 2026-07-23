@@ -45,6 +45,9 @@ export const site = {
   deloitteForageCertificateUrl:
     'https://theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_ki3cp855nizqwGNam_1766216336103_completion_certificate.pdf',
 
+  /** Python basics learning resource (served from the app public folder) */
+  pythonBasicsPdfPath: '/python%20basics.pdf',
+
   /** AWS MLS exam overview + Skill Builder ML hub (“facility”) + official verification */
   // awsMachineLearningCertificationUrl:
   //   'https://aws.amazon.com/certification/certified-machine-learning-specialty/',
@@ -64,6 +67,10 @@ export type CertificationEntry = {
   external?: boolean
   /** Short tag for pills */
   tag?: string
+  /** Optional local file path for credential PDFs or resources */
+  path?: string
+  /** Optional certification preview image path */
+  imgSrc?: string
 }
 
 /** Mirrors public LinkedIn “Licenses & certifications” (AWS MLS is featured separately in UI) */
@@ -93,14 +100,17 @@ export const certificationsList: readonly CertificationEntry[] = [
     title: 'Data Analyst course',
     issuer: 'Edupinnacle',
     issued: 'Sep 2024',
-    href: 'https://edupinnacle.com/certificate-verification/',
+    href: '/data analyst course.png',
     tag: 'Analytics',
+    imgSrc: '/data analyst course.png',
   },
   {
     title: 'Springboard Program',
     issuer: 'Infosys',
     issued: 'Oct 2023',
-    href: 'https://infyspringboard.infosys.com/',
+    path: site.pythonBasicsPdfPath,
+    href: site.pythonBasicsPdfPath,
+    external: false,
     tag: 'Foundation',
   },
 ] as const
