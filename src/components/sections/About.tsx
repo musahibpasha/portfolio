@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { BarChart3, Code2, Layout } from 'lucide-react'
 import { site } from '../../config/site'
-import { SectionHeading } from '../ui/SectionHeading'
 import { SectionReveal } from '../ui/SectionReveal'
 
 const pillars = [
