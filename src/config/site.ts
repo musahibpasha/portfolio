@@ -1,4 +1,4 @@
-/** Update email before deploying publicly · Copy aligned with public LinkedIn */
+
 export const site = {
   name: 'Mohammad Musahib Pasha',
 
@@ -12,7 +12,7 @@ export const site = {
     'Data Analytics & SQL | Junior Web Developer @ ThoughtBot | Computer Science Student',
 
   heroIntro:
-    'I split my focus between disciplined data work—SQL, structured analysis, and analytics simulations—and shipping clean web interfaces with React and modern CSS. MCA studies and certifications (Deloitte Analytics on Forage, AWS ML Specialty, MongoDB paths) sharpen how I validate insights and pair them with usable UI.',
+    'I split my focus between disciplined data work—SQL, structured analysis, and analytics simulations—and shipping clean web interfaces with React and modern CSS. MCA studies and certifications (Deloitte Analytics on Forage,MongoDB paths) sharpen how I validate insights and pair them with usable UI.',
 
   /** Hero marquee chips */
   stackBadges: [
@@ -135,18 +135,6 @@ export type PortfolioProject = {
 
 /** Projects section mirrors what you showcase on LinkedIn + this site + Forage credential */
 export const portfolioProjects: readonly PortfolioProject[] = [
-  {
-    title: 'Health Care SQL Database',
-    description:
-      'Comprehensive SQL healthcare analytics dashboard showcasing data modeling, complex queries, and interactive visualizations. Built with SQL database design patterns and responsive charts for healthcare metrics analysis and reporting.',
-    tech: ['SQL', 'Database Design', 'Charts', 'Analytics'],
-    accent: 'from-red-500/40 to-pink-600/20',
-    github: 'https://github.com/musahibpasha/Health-Care-SQL-',
-    live: 'https://v0-resume-database-charts.vercel.app/',
-    initials: 'HC',
-    imgSrc: '/image.png',
-    liveLabel: 'View Demo',
-  },
   {
     title: 'Portfolio Website',
     description:

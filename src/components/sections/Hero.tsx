@@ -85,7 +85,7 @@ export function Hero() {
               <ArrowRight className="h-4 w-4" />
             </motion.a>
             <motion.a
-              href="/Mohammad_Musahib_Pasha (5)-4.pdf"
+              href="/Mohammad_Musahib_Pasha_Resume.pdf"
               download
               className="inline-flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-7 py-3.5 text-sm font-semibold text-emerald-300 transition hover:border-emerald-500/60 hover:bg-emerald-500/20"
               whileHover={{ scale: 1.02, y: -1 }}
