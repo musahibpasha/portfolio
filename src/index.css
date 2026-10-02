@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 0 0% 4%;
+  --surface: 0 0% 8%;
+  --text: 0 0% 96%;
+  --muted: 0 0% 53%;
+  --stroke: 0 0% 12%;
+  --accent: 0 0% 96%;
+}
+
+html { scroll-behavior: smooth; color-scheme: dark; }
+body { @apply bg-bg text-text-primary font-body antialiased; margin: 0; overflow-x: hidden; }
+
+.accent-gradient { background: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%); }
+.animated-border { background: linear-gradient(90deg, #89AACC, #4E85BF, #89AACC); background-size: 200% 200%; @apply animate-gradient-shift; }
+.halftone { background-image: radial-gradient(circle, #000 1px, transparent 1px); background-size: 4px 4px; }
+.nav-scroll { scrollbar-width: none; -ms-overflow-style: none; }
+.nav-scroll::-webkit-scrollbar { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
