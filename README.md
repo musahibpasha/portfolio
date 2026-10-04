@@ -60,14 +60,12 @@ npm run preview
 
 The contact form sends messages through a Vercel API route and [Resend](https://resend.com):
 
-1. Create a Resend account and verify a sending domain.
-2. In the Vercel project settings, add these Environment Variables for Production (and Preview if needed):
-   - `RESEND_API_KEY` — your Resend API key
-   - `CONTACT_FROM_EMAIL` — a sender address on your verified domain, such as `Portfolio <contact@example.com>`
-   - `CONTACT_TO_EMAIL` — the inbox that should receive contact messages
-3. Redeploy the Vercel project after saving the variables.
+1. Create a Resend account and add `RESEND_API_KEY` in the Vercel project settings under Environment Variables.
+2. For testing, the API uses `Portfolio <onboarding@resend.dev>` by default. Resend test mode only delivers to the email address associated with your Resend account.
+3. For public submissions, verify a domain in Resend and set `CONTACT_FROM_EMAIL` to a sender on that domain, such as `Portfolio <contact@example.com>`.
+4. Redeploy the Vercel project after changing environment variables.
 
-The Resend API key is only used by the server-side `/api/contact` function and must not use a `VITE_` prefix. Local Vite development does not run Vercel API functions; use `vercel dev` to test submissions locally.
+Contact messages go to `musahibpasha4@gmail.com` by default. Set `CONTACT_TO_EMAIL` only if you want them sent to a different inbox. The Resend API key is only used by the server-side `/api/contact` function and must not use a `VITE_` prefix. Local Vite development does not run Vercel API functions; use `vercel dev` to test submissions locally.
 
 ## 📁 Project Structure
 

@@ -28,10 +28,10 @@ export default async function handler(req: ContactRequest, res: ContactResponse)
   }
 
   const apiKey = process.env.RESEND_API_KEY
-  const from = process.env.CONTACT_FROM_EMAIL
-  const to = process.env.CONTACT_TO_EMAIL
+  const from = process.env.CONTACT_FROM_EMAIL || 'Portfolio <onboarding@resend.dev>'
+  const to = process.env.CONTACT_TO_EMAIL || 'musahibpasha4@gmail.com'
 
-  if (!apiKey || !from || !to) {
+  if (!apiKey) {
     return res.status(503).json({ error: 'Contact email is not configured. Please email directly instead.' })
   }
 
