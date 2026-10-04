@@ -12,8 +12,9 @@ const socials = [
 
 export function Contact() {
   const track = useRef<HTMLDivElement>(null)
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'email' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
+  const [emailHref, setEmailHref] = useState('')
 
   useEffect(() => {
     const tween = gsap.to(track.current, { xPercent: -50, duration: 40, ease: 'none', repeat: -1 })
@@ -49,6 +50,16 @@ export function Contact() {
         }),
       })
       const result: { error?: string } = await response.json().catch(() => ({}))
+
+      if (response.status === 503) {
+        const subject = encodeURIComponent(`Portfolio contact from ${name}`)
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)
+        const href = `mailto:${site.email}?subject=${subject}&body=${body}`
+        setEmailHref(href)
+        setStatus('email')
+        window.location.assign(href)
+        return
+      }
 
       if (!response.ok) {
         throw new Error(result.error ?? 'Unable to send your message. Please try again.')
@@ -99,6 +110,7 @@ export function Contact() {
             </button>
             {status === 'error' && <p className="text-sm text-red-400">{errorMessage}</p>}
             {status === 'sent' && <p className="text-sm text-emerald-400">Your message has been sent successfully.</p>}
+            {status === 'email' && <p className="text-sm text-muted">Your email app should open with a draft. <a className="underline" href={emailHref}>Open the email draft</a> if it doesn&apos;t.</p>}
           </form>
         </div>
 
