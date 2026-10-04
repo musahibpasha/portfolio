@@ -1,7 +1,6 @@
 import gsap from 'gsap'
 import { type FormEvent, useEffect, useRef, useState } from 'react'
 import { site } from '../../config/site'
-import { supabase } from '../../lib/supabase'
 import { GradButton } from '../ui/GradButton'
 import { HlsVideo } from '../ui/HlsVideo'
 
@@ -35,25 +34,32 @@ export function Contact() {
       return
     }
 
-    if (!supabase) {
-      setStatus('error')
-      setErrorMessage('The contact form is not configured yet. Please email musahibpasha4@gmail.com directly.')
-      return
-    }
-
     setStatus('sending')
     setErrorMessage('')
 
-    const { error } = await supabase.from('contact_submissions').insert([{ name, email, message }])
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          website: String(fd.get('website') ?? '').trim(),
+        }),
+      })
+      const result: { error?: string } = await response.json().catch(() => ({}))
 
-    if (error) {
+      if (!response.ok) {
+        throw new Error(result.error ?? 'Unable to send your message. Please try again.')
+      }
+
+      form.reset()
+      setStatus('sent')
+    } catch (error) {
       setStatus('error')
-      setErrorMessage(error.message)
-      return
+      setErrorMessage(error instanceof Error ? error.message : 'Unable to send your message. Please try again.')
     }
-
-    form.reset()
-    setStatus('sent')
   }
 
   const field = 'w-full rounded-full border border-stroke bg-bg/70 px-5 py-3.5 text-sm text-text-primary outline-none backdrop-blur-md placeholder:text-muted focus:border-[#4E85BF]'
@@ -78,6 +84,10 @@ export function Contact() {
           <GradButton href={`mailto:${site.email}`} variant="solid">{site.email}</GradButton>
 
           <form onSubmit={onSubmit} className="flex w-full flex-col gap-3 text-left">
+            <div className="hidden" aria-hidden="true">
+              <label htmlFor="website">Website</label>
+              <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+            </div>
             <label className="text-xs uppercase tracking-[0.2em] text-muted" htmlFor="name">Name</label>
             <input id="name" name="name" type="text" autoComplete="name" required className={field} placeholder="Your name" />
             <label className="text-xs uppercase tracking-[0.2em] text-muted" htmlFor="email">Email</label>

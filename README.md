@@ -58,15 +58,16 @@ npm run preview
 
 ## 📧 Contact Form Setup
 
-The contact form is integrated with Supabase. To enable submissions:
+The contact form sends messages through a Vercel API route and [Resend](https://resend.com):
 
-1. Create a Supabase project at [supabase.com](https://supabase.com)
-2. Add your credentials to `.env`:
-   ```
-   VITE_SUPABASE_URL=your_project_url
-   VITE_SUPABASE_ANON_KEY=your_anon_key
-   ```
-3. Create `contact_submissions` table in Supabase (see setup docs)
+1. Create a Resend account and verify a sending domain.
+2. In the Vercel project settings, add these Environment Variables for Production (and Preview if needed):
+   - `RESEND_API_KEY` — your Resend API key
+   - `CONTACT_FROM_EMAIL` — a sender address on your verified domain, such as `Portfolio <contact@example.com>`
+   - `CONTACT_TO_EMAIL` — the inbox that should receive contact messages
+3. Redeploy the Vercel project after saving the variables.
+
+The Resend API key is only used by the server-side `/api/contact` function and must not use a `VITE_` prefix. Local Vite development does not run Vercel API functions; use `vercel dev` to test submissions locally.
 
 ## 📁 Project Structure
 
